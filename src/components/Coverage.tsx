@@ -2,7 +2,31 @@ import { CITIES, DOTS, MAP } from "@/content/map";
 import { Reveal, SectionHead } from "./ui";
 
 const HQ = CITIES.find((c) => c.hq)!;
-const LEFT = ["Melbourne"];
+const ROUTES = CITIES.filter((c) => !c.hq);
+// Labels drawn to the left of their dot so the east coast doesn't run off the edge.
+const LEFT = ["Perth", "Adelaide", "Brisbane"];
+// Seconds between each route firing, and how long a signal takes to arrive (matches .route-signal).
+const STAGGER = 0.45;
+const TRAVEL = 1.4;
+
+function MapLabel({ x, y, left, children }: { x: number; y: number; left?: boolean; children: React.ReactNode }) {
+  return (
+    <text
+      x={x + (left ? -14 : 14)}
+      y={y + 5}
+      textAnchor={left ? "end" : "start"}
+      className="text-[28px] sm:text-[17px]"
+      letterSpacing="2"
+      fill="#0b1a2c"
+      stroke="#f6f6f3"
+      strokeWidth="6"
+      paintOrder="stroke"
+      style={{ fontFamily: "var(--font-mono-face), monospace", textTransform: "uppercase" }}
+    >
+      {children}
+    </text>
+  );
+}
 
 export function Coverage() {
   return (
@@ -38,33 +62,41 @@ export function Coverage() {
           </Reveal>
 
           <Reveal className="relative lg:col-span-8" delay={120}>
-            <svg viewBox={`0 0 ${MAP.w} ${MAP.h}`} className="h-auto w-full" role="img" aria-label="Map of Australia marking the Melbourne command centre">
+            <svg viewBox={`0 0 ${MAP.w} ${MAP.h}`} className="h-auto w-full" role="img" aria-label="Map of Australia: nationwide coverage from the Melbourne command centre">
               <g fill="#c3c9cc">
                 {DOTS.map(([x, y], i) => (
                   <circle key={i} cx={x} cy={y} r={3.1} />
                 ))}
               </g>
-              {[HQ].map((c) => (
+
+              {/* Routes out of Melbourne: a faint dashed track, and a signal that runs along it on a loop. */}
+              {ROUTES.map((c, i) => {
+                const d = `M${HQ.x},${HQ.y} Q${(HQ.x + c.x) / 2},${Math.min(HQ.y, c.y) - 60} ${c.x},${c.y}`;
+                const delay = `${i * STAGGER}s`;
+                return (
+                  <g key={c.name}>
+                    <path d={d} pathLength={1} className="route-track" style={{ animationDelay: delay }} />
+                    <path d={d} pathLength={1} className="route-signal" style={{ animationDelay: delay }} />
+                  </g>
+                );
+              })}
+
+              {ROUTES.map((c, i) => (
                 <g key={c.name}>
-                  {c.hq && <circle cx={c.x} cy={c.y} r="10" fill="#e8650f" className="pulse" />}
-                  <circle cx={c.x} cy={c.y} r={c.hq ? 8 : 5} fill={c.hq ? "#e8650f" : "#0b1a2c"} stroke="#f6f6f3" strokeWidth="2.5" />
-                  <text
-                    x={c.x + (LEFT.includes(c.name) ? -14 : 14)}
-                    y={c.y + 5}
-                    textAnchor={LEFT.includes(c.name) ? "end" : "start"}
-                    className="text-[28px] sm:text-[17px]"
-                    letterSpacing="2"
-                    fill="#0b1a2c"
-                    stroke="#f6f6f3"
-                    strokeWidth="6"
-                    paintOrder="stroke"
-                    style={{ fontFamily: "var(--font-mono-face), monospace", textTransform: "uppercase" }}
-                  >
+                  {/* Ping as the signal lands. */}
+                  <circle cx={c.x} cy={c.y} r="6" fill="none" stroke="#e8650f" strokeWidth="2" className="city-ping" style={{ animationDelay: `${i * STAGGER + TRAVEL}s` }} />
+                  <circle cx={c.x} cy={c.y} r="5" fill="#0b1a2c" stroke="#f6f6f3" strokeWidth="2.5" />
+                  <MapLabel x={c.x} y={c.y} left={LEFT.includes(c.name)}>
                     {c.name}
-                    {" command centre"}
-                  </text>
+                  </MapLabel>
                 </g>
               ))}
+
+              <circle cx={HQ.x} cy={HQ.y} r="10" fill="#e8650f" className="pulse" />
+              <circle cx={HQ.x} cy={HQ.y} r="8" fill="#e8650f" stroke="#f6f6f3" strokeWidth="2.5" />
+              <MapLabel x={HQ.x} y={HQ.y + 30} left>
+                Melbourne command centre
+              </MapLabel>
             </svg>
           </Reveal>
         </div>
