@@ -6,7 +6,7 @@ export function Faq() {
   return (
     <section id="faq" className="border-t border-rule bg-white">
       <div className="wrap py-24 lg:py-36">
-        <SectionHead index="08" kicker="FAQ" title={<>Are You Ready To Take Control ?</>} />
+        <SectionHead index="09" kicker="FAQ" title={<>Are You Ready To Take Control ?</>} />
         <div className="mt-14 grid gap-8 lg:grid-cols-12">
         <Reveal className="border-t border-ink/80 lg:col-span-9 lg:col-start-4">
           {faqs.map((f) => (

@@ -5,7 +5,6 @@
 import { keepSafe, services, process, standards, testimonials } from "@/content/site";
 import { asset } from "@/lib/basePath";
 import { Brackets, Photo, Reveal, SectionHead } from "./ui";
-import { Videos } from "./Videos";
 
 /* ── Who We Keep Safe (who-we-keep-safe) — logo carousel ───────────── */
 export function KeepSafe() {
@@ -73,7 +72,7 @@ export function Standards() {
   return (
     <section id="standards" className="border-t border-rule bg-white">
       <div className="wrap py-24 lg:py-36">
-        <SectionHead index="02" kicker="Industry Standards" title={<>Industry Standards <span className="dim">and Beyond</span></>} />
+        <SectionHead index="03" kicker="Industry Standards" title={<>Industry Standards <span className="dim">and Beyond</span></>} />
         <div className="mt-16 grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-3">
             <div className="relative aspect-[4/5] overflow-hidden bg-mist">
@@ -127,7 +126,7 @@ export function WhyCanine() {
   return (
     <section className="wrap py-24 lg:py-36">
       <SectionHead
-        index="03"
+        index="04"
         kicker="Our Dogs"
         title={
           <>
@@ -154,7 +153,7 @@ export function Process() {
     <section className="border-t border-rule bg-white">
       <div className="wrap py-24 lg:py-32">
         <SectionHead
-          index="06"
+          index="07"
           kicker="How We Work With Clients"
           title={
             <>
@@ -186,7 +185,7 @@ export function Process() {
 export function Testimonials() {
   return (
     <section id="testimonials" className="wrap py-24 lg:py-36">
-      <SectionHead index="07" kicker="Testimonials" title={<>Read some of our <span className="dim">testimonials.</span></>} />
+      <SectionHead index="08" kicker="Testimonials" title={<>Read some of our <span className="dim">testimonials.</span></>} />
       <div className="mt-16 grid gap-6 lg:grid-cols-3">
         {testimonials.map((t, i) => (
           <Reveal as="figure" key={t.name} delay={i * 110} className="flex flex-col border border-rule bg-white p-8">
@@ -200,7 +199,6 @@ export function Testimonials() {
         ))}
       </div>
 
-      <Videos />
     </section>
   );
 }

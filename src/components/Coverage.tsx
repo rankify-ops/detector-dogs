@@ -30,7 +30,7 @@ export function Coverage() {
     <section id="coverage" className="relative overflow-hidden">
       <div className="wrap py-24 lg:py-36">
         <SectionHead
-          index="05"
+          index="06"
           kicker="What Locations Do We Cover?"
           title={
             <>
@@ -66,12 +66,16 @@ export function Coverage() {
                 ))}
               </g>
 
-              {/* Lines out from Melbourne to each capital. */}
-              <g stroke="#0b1a2c" strokeWidth="1" strokeDasharray="3 5" fill="none" opacity="0.45">
-                {ROUTES.map((c) => (
-                  <path key={c.name} d={`M${HQ.x},${HQ.y} Q${(HQ.x + c.x) / 2},${Math.min(HQ.y, c.y) - 60} ${c.x},${c.y}`} />
-                ))}
-              </g>
+              {/* Lines out from Melbourne to each capital, flowing outward on a continuous loop. */}
+              {ROUTES.map((c) => {
+                const d = `M${HQ.x},${HQ.y} Q${(HQ.x + c.x) / 2},${Math.min(HQ.y, c.y) - 60} ${c.x},${c.y}`;
+                return (
+                  <g key={c.name} fill="none">
+                    <path d={d} className="route-flow" />
+                    <path d={d} className="route-pulse" />
+                  </g>
+                );
+              })}
 
               {ROUTES.map((c) => (
                 <g key={c.name}>

@@ -255,3 +255,31 @@
   .logo-marquee { animation-duration: 70s; }
 }
 
+/*
+ * Coverage map routes. Paths start at Melbourne, so a negative dash offset
+ * moves everything outward. The dashed line creeps; the orange dots ride the
+ * same line a little faster. Offsets are one full dash cycle, so the loop is seamless.
+ */
+@layer components {
+  .route-flow {
+    stroke: #0b1a2c;
+    stroke-opacity: 0.5;
+    stroke-width: 1.4;
+    stroke-dasharray: 3 6;
+    animation: route-flow 1.8s linear infinite;
+  }
+  @keyframes route-flow { to { stroke-dashoffset: -9; } }
+
+  .route-pulse {
+    stroke: #e8650f;
+    stroke-width: 5.5;
+    stroke-linecap: round;
+    stroke-dasharray: 0.1 90;
+    animation: route-pulse 3.6s linear infinite;
+  }
+  @keyframes route-pulse { to { stroke-dashoffset: -90.1; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .route-flow, .route-pulse { animation: none; }
+  }
+}

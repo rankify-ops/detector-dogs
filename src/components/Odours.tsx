@@ -17,7 +17,7 @@ export function Odours() {
     <section id="odours" className="border-t border-rule bg-white">
       <div className="wrap py-24 lg:py-36">
         <SectionHead
-          index="04"
+          index="05"
           kicker="Odours Our Dogs Detect"
           title={
             <>

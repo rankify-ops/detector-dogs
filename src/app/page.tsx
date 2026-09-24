@@ -4,6 +4,7 @@ import { Odours } from "@/components/Odours";
 import { Coverage } from "@/components/Coverage";
 import { Contact } from "@/components/Contact";
 import { Faq } from "@/components/Faq";
+import { Videos } from "@/components/Videos";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <KeepSafe />
       <Services />
+      <Videos />
       <Standards />
       <WhyCanine />
       <Odours />
