@@ -11,12 +11,8 @@ export function KeepSafe() {
   // Two copies back to back; the track slides exactly one copy (-50%) and loops.
   const track = [...keepSafe, ...keepSafe];
   return (
-    <section aria-labelledby="keep-safe" className="border-y border-rule bg-white">
-      <div className="wrap flex flex-col justify-between gap-3 pt-12 sm:flex-row sm:items-end">
-        <h2 id="keep-safe" className="mono text-ink">Who We Keep Safe</h2>
-        <p className="mono text-[10.5px] text-ink-3">Thank You For Choosing Detector Dogs Australia</p>
-      </div>
-      <div className="mt-8 overflow-hidden border-t border-rule [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
+    <section aria-label="Who We Keep Safe" className="border-y border-rule bg-white">
+      <div className="overflow-hidden [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
         <ul className="marquee logo-marquee">
           {track.map((k, i) => (
             <li

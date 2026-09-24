@@ -40,7 +40,11 @@ export function Hero() {
                 priority
               />
               <div className="scan" aria-hidden />
-              <div className="lock" style={{ left: "8%", top: "66%", width: "23%", height: "32%" }} aria-hidden />
+              <div className="lock" style={{ left: "8%", top: "66%", width: "23%", height: "32%" }} aria-hidden>
+                <span className="mono absolute -top-6 left-0 whitespace-nowrap bg-signal px-1.5 py-0.5 text-[9.5px] text-ink">
+                  K9 · Search active
+                </span>
+              </div>
               <Brackets light />
             </div>
           </Reveal>
