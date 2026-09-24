@@ -15,7 +15,7 @@ function MapLabel({ x, y, left, children }: { x: number; y: number; left?: boole
       className="text-[28px] sm:text-[17px]"
       letterSpacing="2"
       fill="#0b1a2c"
-      stroke="#f6f6f3"
+      stroke="#ffffff"
       strokeWidth="6"
       paintOrder="stroke"
       style={{ fontFamily: "var(--font-mono-face), monospace", textTransform: "uppercase" }}
@@ -27,8 +27,8 @@ function MapLabel({ x, y, left, children }: { x: number; y: number; left?: boole
 
 export function Coverage() {
   return (
-    <section id="coverage" className="relative overflow-hidden">
-      <div className="wrap py-24 lg:py-36">
+    <section id="coverage" className="relative overflow-hidden border-t border-rule bg-white">
+      <div className="wrap section-y">
         <SectionHead
           index="06"
           kicker="What Locations Do We Cover?"
@@ -79,7 +79,7 @@ export function Coverage() {
 
               {ROUTES.map((c) => (
                 <g key={c.name}>
-                  <circle cx={c.x} cy={c.y} r="5" fill="#0b1a2c" stroke="#f6f6f3" strokeWidth="2.5" />
+                  <circle cx={c.x} cy={c.y} r="5" fill="#0b1a2c" stroke="#ffffff" strokeWidth="2.5" />
                   <MapLabel x={c.x} y={c.y} left={LEFT.includes(c.name)}>
                     {c.name}
                   </MapLabel>
@@ -87,7 +87,7 @@ export function Coverage() {
               ))}
 
               <circle cx={HQ.x} cy={HQ.y} r="10" fill="#e8650f" className="pulse" />
-              <circle cx={HQ.x} cy={HQ.y} r="8" fill="#e8650f" stroke="#f6f6f3" strokeWidth="2.5" />
+              <circle cx={HQ.x} cy={HQ.y} r="8" fill="#e8650f" stroke="#ffffff" strokeWidth="2.5" />
               <MapLabel x={HQ.x} y={HQ.y + 30} left>
                 Melbourne command centre
               </MapLabel>

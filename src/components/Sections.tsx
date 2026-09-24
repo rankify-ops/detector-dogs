@@ -38,7 +38,8 @@ export function KeepSafe() {
 /* ── Our Services (services + drug-searches) ─────────────────────────── */
 export function Services() {
   return (
-    <section id="services" className="wrap py-24 lg:py-36">
+    <section id="services">
+      <div className="wrap section-y">
       <SectionHead
         index="01"
         kicker="Our Services"
@@ -63,6 +64,7 @@ export function Services() {
           </Reveal>
         ))}
       </ul>
+      </div>
     </section>
   );
 }
@@ -70,8 +72,8 @@ export function Services() {
 /* ── Industry Standards and Beyond (services / our-dogs) ─────────────── */
 export function Standards() {
   return (
-    <section id="standards" className="border-t border-rule bg-white">
-      <div className="wrap py-24 lg:py-36">
+    <section id="standards" className="border-t border-rule">
+      <div className="wrap section-y">
         <SectionHead index="03" kicker="Industry Standards" title={<>Industry Standards <span className="dim">and Beyond</span></>} />
         <div className="mt-16 grid gap-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-3">
@@ -124,7 +126,8 @@ export function WhyCanine() {
     ["2", "Two primary alert styles", "Active alerts, commonly used for narcotics detection, where the dog may scratch or paw near the source of the odour. Passive alerts, used in sensitive environments such as explosives detection, where the dog indicates the scent by sitting, staring, or freezing at the location to avoid disturbing the area."],
   ];
   return (
-    <section className="wrap py-24 lg:py-36">
+    <section className="border-t border-rule bg-white">
+      <div className="wrap section-y">
       <SectionHead
         index="04"
         kicker="Our Dogs"
@@ -136,12 +139,13 @@ export function WhyCanine() {
       />
       <div className="mt-16 grid gap-px bg-rule sm:grid-cols-3">
         {figures.map(([n, t, b], i) => (
-          <Reveal key={t} delay={i * 110} className="bg-paper py-8 sm:px-8 sm:first:pl-0">
+          <Reveal key={t} delay={i * 110} className="bg-white py-8 sm:px-8 sm:first:pl-0">
             <p className="text-[64px] leading-none tracking-[-0.04em] text-ink lg:text-[88px]">{n}</p>
             <p className="mono mt-6 text-ink">{t}</p>
             <p className="mt-3 text-[14.5px] leading-relaxed">{b}</p>
           </Reveal>
         ))}
+      </div>
       </div>
     </section>
   );
@@ -150,8 +154,8 @@ export function WhyCanine() {
 /* ── How We Work With Clients (about-us) ─────────────────────────────── */
 export function Process() {
   return (
-    <section className="border-t border-rule bg-white">
-      <div className="wrap py-24 lg:py-32">
+    <section className="border-t border-rule">
+      <div className="wrap section-y">
         <SectionHead
           index="07"
           kicker="How We Work With Clients"
@@ -163,7 +167,7 @@ export function Process() {
         />
         <ol className="mt-16 grid gap-px bg-rule md:grid-cols-5">
           {process.map((t, i) => (
-            <Reveal as="li" key={t} delay={i * 90} className="bg-white py-8 md:px-6 md:first:pl-0">
+            <Reveal as="li" key={t} delay={i * 90} className="bg-paper py-8 md:px-6 md:first:pl-0">
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center border border-ink text-[13px] text-ink">{i + 1}</span>
                 <span className="h-px flex-1 bg-rule-2" />
@@ -184,11 +188,12 @@ export function Process() {
 /* ── Testimonials (read-testimonials) + media (home, services) ───────── */
 export function Testimonials() {
   return (
-    <section id="testimonials" className="wrap py-24 lg:py-36">
+    <section id="testimonials" className="border-t border-rule bg-white">
+      <div className="wrap section-y">
       <SectionHead index="08" kicker="Testimonials" title={<>Read some of our <span className="dim">testimonials.</span></>} />
       <div className="mt-16 grid gap-6 lg:grid-cols-3">
         {testimonials.map((t, i) => (
-          <Reveal as="figure" key={t.name} delay={i * 110} className="flex flex-col border border-rule bg-white p-8">
+          <Reveal as="figure" key={t.name} delay={i * 110} className="flex flex-col border border-rule bg-paper p-8">
             <p className="mono text-[10.5px] text-signal-ink">{t.heading}</p>
             <blockquote className="mt-6 flex-1 text-[17px] leading-[1.55] tracking-[-0.01em] text-ink">“{t.quote}”</blockquote>
             <figcaption className="mt-8 border-t border-rule pt-5">
@@ -199,6 +204,7 @@ export function Testimonials() {
         ))}
       </div>
 
+      </div>
     </section>
   );
 }
@@ -207,7 +213,7 @@ export function Testimonials() {
 export function Scope() {
   return (
     <section className="border-t border-rule bg-mist">
-      <div className="wrap grid gap-10 py-20 lg:grid-cols-12 lg:py-24">
+      <div className="wrap section-y grid gap-10 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="kicker mono">What We Can’t Do</p>
           <h2 className="h2 mt-6">

@@ -79,6 +79,10 @@
     text-transform: uppercase;
   }
 
+  /* Section rhythm: the same padding above and below every section. */
+  .section-y { padding-block: 96px; }
+  @media (min-width: 1024px) { .section-y { padding-block: 112px; } }
+
   .wrap {
     width: 100%;
     max-width: 1320px;

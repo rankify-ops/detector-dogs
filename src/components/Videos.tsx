@@ -12,8 +12,8 @@ import { Photo, Reveal } from "./ui";
 export function Videos() {
   const [playing, setPlaying] = useState<string | null>(null);
   return (
-    <section id="videos" className="border-t border-rule">
-      <div className="wrap py-24 lg:py-32">
+    <section id="videos" className="border-t border-rule bg-white">
+      <div className="wrap section-y">
         <div className="flex items-baseline gap-6 border-t border-ink/80 pt-6">
           <span className="mono text-signal-ink">02</span>
           <h2 className="mono text-ink-3">Videos</h2>
@@ -23,7 +23,7 @@ export function Videos() {
             <Reveal
               key={v.id}
               delay={i * 110}
-              className="flex flex-col border border-rule bg-white"
+              className="flex flex-col border border-rule bg-paper"
             >
               <div className="relative aspect-video overflow-hidden bg-ink">
                 {playing === v.id ? (

@@ -14,8 +14,8 @@ export function Odours() {
   const list = odours[tab];
 
   return (
-    <section id="odours" className="border-t border-rule bg-white">
-      <div className="wrap py-24 lg:py-36">
+    <section id="odours" className="border-t border-rule">
+      <div className="wrap section-y">
         <SectionHead
           index="05"
           kicker="Odours Our Dogs Detect"
@@ -33,8 +33,8 @@ export function Odours() {
           }
         />
 
-        <Reveal className="mt-16 border border-rule">
-          <div className="flex flex-col justify-between gap-4 border-b border-rule bg-paper p-3 sm:flex-row sm:items-center">
+        <Reveal className="mt-16 border border-rule bg-white">
+          <div className="flex flex-col justify-between gap-4 border-b border-rule bg-mist p-3 sm:flex-row sm:items-center">
             <div role="tablist" aria-label="Odour class" className="grid grid-cols-2 gap-1 sm:flex">
               {TABS.map((t) => (
                 <button

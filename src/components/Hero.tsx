@@ -7,7 +7,7 @@ export function Hero() {
     <section id="top" className="relative overflow-hidden">
       <div className="grid-bg pointer-events-none absolute inset-0 opacity-70" aria-hidden />
 
-      <div className="wrap relative pb-14 pt-10 sm:pt-16 lg:pb-16 lg:pt-16">
+      <div className="wrap relative pb-14 pt-10 sm:pt-16 lg:pb-28 lg:pt-16">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
           <div className="lg:col-span-6">
             <p className="kicker mono">Detector Dogs Australia · Est 2000</p>

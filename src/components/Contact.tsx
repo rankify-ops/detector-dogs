@@ -57,7 +57,7 @@ export function Contact() {
 
   return (
     <section id="contact" className="border-t border-rule bg-white">
-      <div className="wrap grid gap-16 py-24 lg:grid-cols-12 lg:py-36">
+      <div className="wrap section-y grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <p className="mono flex justify-between text-ink-3 lg:block">
             <span className="text-signal-ink">10</span>
