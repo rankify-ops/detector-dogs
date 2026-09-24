@@ -32,11 +32,12 @@ export function MobileBar() {
   return (
     <div
       aria-hidden={!show}
-      className={`fixed inset-x-0 bottom-0 z-30 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-30 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] sm:hidden ${
         show ? "translate-y-0" : "pointer-events-none translate-y-[120%]"
       }`}
     >
-      <div className="glass grid grid-cols-2 gap-2 border border-ink/10 p-2 shadow-[0_10px_40px_rgba(11,26,44,0.16)]">
+      {/* Full-width glass strip, flush to the bottom edge; the home-indicator inset is padding inside it. */}
+      <div className="glass grid grid-cols-2 gap-2 border-t border-ink/10 px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3 shadow-[0_-8px_30px_rgba(11,26,44,0.10)]">
         <a href="#contact" tabIndex={show ? 0 : -1} className="btn btn-primary h-12 gap-2 px-3 text-[11px] tracking-[0.1em]">
           Enquire Now <Arrow />
         </a>
