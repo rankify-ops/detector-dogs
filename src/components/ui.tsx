@@ -72,7 +72,7 @@ export function Photo({
 export function Arrow({ className = "" }: { className?: string }) {
   return (
     <span className={`arrow-box ${className}`} aria-hidden>
-      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" className="arrow">
+      <svg width="12" height="12" viewBox="0 0 11 11" fill="none" className="arrow">
         <path d="M1.5 9.5l8-8M3 1.5h6.5V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
       </svg>
     </span>

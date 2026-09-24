@@ -133,22 +133,10 @@
   .btn-primary:hover { background: var(--navy-2); }
   .btn-ghost { color: var(--ink); background: transparent; border-color: var(--rule-2); }
   .btn-ghost:hover { border-color: var(--ink); }
-  /* Arrow box: a square at the right end of the button, arrow nudges up-right on hover. */
-  .btn:has(.arrow-box) { padding-right: 8px; gap: 16px; }
-  .arrow-box {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 34px;
-    height: 34px;
-    flex-shrink: 0;
-    overflow: hidden;
-  }
-  .btn-primary .arrow-box { background: var(--paper); color: var(--ink); }
-  .btn-ghost .arrow-box { background: var(--ink); color: var(--paper); }
+  /* Up-right arrow after the label, no box; nudges up-right on hover. Inherits the button's text colour. */
+  .arrow-box { display: inline-flex; flex-shrink: 0; }
   .btn .arrow { transition: transform 0.35s var(--ease); }
   .btn:hover .arrow { transform: translate(2px, -2px); }
-  .h-11.btn .arrow-box { width: 28px; height: 28px; }
 
   /* Frosted header: transparent at the top, glass once scrolled. */
   .glass {

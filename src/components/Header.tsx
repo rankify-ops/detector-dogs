@@ -70,7 +70,7 @@ export function Header() {
             <a href={site.phoneHref} className="mono hidden text-ink md:block xl:mr-3">
               {site.phone}
             </a>
-            <a href="#contact" className="btn btn-primary h-11 gap-2.5 pl-3 text-[10.5px] tracking-[0.1em] sm:gap-4 sm:pl-[22px] sm:text-[12px] sm:tracking-[0.14em]">
+            <a href="#contact" className="btn btn-primary h-11 gap-2.5 px-3 text-[10.5px] tracking-[0.1em] sm:gap-3 sm:px-[22px] sm:text-[12px] sm:tracking-[0.14em]">
               Enquire Now <Arrow />
             </a>
             <button
