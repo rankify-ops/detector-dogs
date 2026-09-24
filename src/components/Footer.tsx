@@ -9,8 +9,9 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Logo light />
             <p className="mt-8 max-w-[380px] text-[14.5px] leading-relaxed">
-              Australia’s longest-serving canine detection service. Explosive and narcotic detection for community,
-              business and government since 2000.
+              Australia’s longest-serving Canine Detection Service.
+              <br />
+              Community | Business | Government
             </p>
           </div>
           <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:col-span-7">
@@ -41,14 +42,14 @@ export function Footer() {
                 <li><a href={site.linkedin} target="_blank" rel="noopener" className="text-white/80 hover:text-white">LinkedIn</a></li>
                 <li><a href={site.facebook} target="_blank" rel="noopener" className="text-white/80 hover:text-white">Facebook</a></li>
                 <li><a href={site.youtube} target="_blank" rel="noopener" className="text-white/80 hover:text-white">YouTube</a></li>
-                <li><a href={site.training} target="_blank" rel="noopener" className="text-white/80 hover:text-white">Von Forell Precision Training</a></li>
+                <li><a href={site.training} target="_blank" rel="noopener" className="text-white/80 hover:text-white">vonforellprecisiontraining.com</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div className="mono flex flex-col gap-3 pt-8 text-[10.5px] text-white/40 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} Detector Dogs Australia</p>
-          <p>Specialist canine detection provider · Not a security guarding company</p>
+          <p>© {new Date().getFullYear()} Detector Dogs Australia All rights reserved</p>
+          <p>Detector Dogs Australia is a specialist detection provider and not a security company.</p>
         </div>
       </div>
     </footer>

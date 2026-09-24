@@ -20,9 +20,10 @@ const mono = Fragment_Mono({
   display: "swap",
 });
 
-const title = "Detector Dogs Australia | Explosive & Narcotic Detection Dogs";
+const title = "Detector Dogs Australia – National Canine Detection Specialists";
+// Their own lines (about-us, home).
 const description =
-  "Australia’s longest-serving canine detection service, est. 2000. Explosive and narcotic detection teams for government, industry and major events, trained to U.S. standards as a minimum. Nationwide. 1300 360 171.";
+  "Australia’s longest-serving Canine Detection Service. Rapid-Response Detection Teams Nationwide. Immediate Service Australia Wide 1300 360 171.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),

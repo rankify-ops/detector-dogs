@@ -1,24 +1,12 @@
-/*
- * Typographic stand-in for the DDA mark — the original is a raster PNG with
- * the letters graded orange → black, and that grade is kept here. Swap for
- * the client's vector logo when they send one.
- */
+import { asset } from "@/lib/basePath";
+
+// Their DDA mark (assets-raw/cropped-DDA-1.png, trimmed) with the company name.
 export function Logo({ light = false }: { light?: boolean }) {
   return (
     <span className="flex items-center gap-3">
-      <span
-        className={`flex h-10 w-10 items-center justify-center border ${light ? "border-white/25" : "border-ink/15"}`}
-      >
-        <span
-          className="bg-clip-text text-[15px] font-medium tracking-[-0.02em] text-transparent"
-          style={{
-            backgroundImage: light
-              ? "linear-gradient(90deg, #e8650f 0%, #ffffff 90%)"
-              : "linear-gradient(90deg, #e8650f 0%, #0b1a2c 90%)",
-          }}
-        >
-          DDA
-        </span>
+      <span className={`flex h-10 items-center px-1.5 ${light ? "bg-white" : ""}`}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={asset("/img/dda-logo.png")} alt="DDA" className="h-6 w-auto" />
       </span>
       <span className={`mono leading-[1.35] ${light ? "text-white" : "text-ink"}`} style={{ fontSize: 10.5 }}>
         Detector Dogs

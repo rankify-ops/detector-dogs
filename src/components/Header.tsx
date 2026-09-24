@@ -38,7 +38,7 @@ export function Header() {
           <span className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <span className="blink h-1.5 w-1.5 rounded-full bg-signal" />
-              Rapid-response teams available nationwide
+              Rapid-Response Detection Teams Nationwide
             </span>
             <a href={site.emergencyHref} className="text-ink hover:text-signal-ink">
               Emergency {site.emergency}
@@ -70,7 +70,7 @@ export function Header() {
               {site.phone}
             </a>
             <a href="#contact" className="btn btn-primary hidden h-11 sm:inline-flex">
-              Request deployment
+              Enquire Now
             </a>
             <button
               type="button"
@@ -108,10 +108,10 @@ export function Header() {
             ))}
             <div className="mt-auto grid gap-3">
               <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary w-full">
-                Request deployment
+                Enquire Now
               </a>
               <a href={site.phoneHref} className="btn btn-ghost w-full">
-                Call {site.phone}
+                Call Now {site.phone}
               </a>
             </div>
           </nav>

@@ -1,13 +1,13 @@
 /*
- * Every claim on the page comes from detectordogs.com.au (home, about-us,
- * services, our-dogs, drug-searches, read-testimonials, who-we-keep-safe),
- * rewritten for length. Nothing here is invented — if a fact isn't on their
- * site, it isn't on this page. See README for what still needs the client's OK.
+ * ALL COPY IS THE CLIENT'S OWN WORDS, taken from detectordogs.com.au
+ * (home, about-us, services, our-dogs, drug-searches, read-testimonials,
+ * who-we-keep-safe). Do not reword, "correct" or add to it — spelling and
+ * odour names are exactly as they publish them. Page source for each block
+ * is noted alongside it.
  */
 
 export const site = {
   name: "Detector Dogs Australia",
-  short: "DDA",
   url: "https://detectordogs.com.au",
   phone: "1300 360 171",
   phoneHref: "tel:1300360171",
@@ -19,152 +19,158 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/detector-dogs-australia-a28072a8/",
   youtube: "https://www.youtube.com/user/TheVonforell",
   training: "https://www.vonforellprecisiontraining.com/",
+  // Footer, home page.
   hours: [
-    ["Monday – Friday", "9 am – 5 pm"],
-    ["Saturday – Sunday", "9 am – 4 pm"],
-    ["Emergency", "0418 348 804"],
+    ["Monday-Friday", "9 am – 5 pm"],
+    ["Saturday", "9 am – 4 pm"],
+    ["Sunday", "9 am – 4 pm"],
   ],
 };
 
 export const nav = [
-  ["Capabilities", "#capabilities"],
+  ["Services", "#services"],
   ["Standards", "#standards"],
-  ["Odour library", "#odours"],
-  ["Coverage", "#coverage"],
-  ["Clients", "#clients"],
+  ["Odours", "#odours"],
+  ["Locations", "#coverage"],
+  ["Testimonials", "#testimonials"],
 ] as const;
 
+// about-us + services.
 export const stats = [
-  { value: "2000", label: "Established", note: "Australia’s longest-serving canine detection service" },
-  { value: "80+", label: "Years", note: "Combined leadership experience in working service dogs" },
-  { value: "U.S.", label: "Standard", note: "Detection-dog standards adopted as our minimum" },
-  { value: "PD 038", label: "NPCA", note: "Certifying official number, international NPCA requirements" },
+  { value: "Est 2000", label: "Established", note: "Australia’s longest-serving Canine Detection Service." },
+  { value: "80+", label: "Years", note: "Years of combined leadership experience in working service dogs." },
+  { value: "U.S.", label: "Standards", note: "Detector Dogs Australia adopts U.S. standards as a minimum requirement." },
+  { value: "PD 038", label: "NPCA", note: "International NPCA requirements under certifying official number PD 038." },
 ];
 
-// Venues and organisations named on the "Who we keep safe" and testimonial pages.
-export const clients = [
-  "Melbourne Cricket Ground",
-  "Australian Open",
-  "Rod Laver Arena",
-  "Marvel Stadium",
-  "Qudos Bank Arena",
-  "Port of Melbourne",
-  "Patrick Stevedoring",
-  "Westfield Sydney CBD",
-  "Chadstone",
-  "Queen Victoria Building",
-  "Commonwealth Games 2006",
-  "World Youth Day 2008",
-  "Moonee Valley Racecourse",
-  "Royal Melbourne Hospital",
-  "St Vincent’s Hospital",
-  "Austin Health",
-  "ExxonMobil",
-  "Bayer",
-  "Cisco",
-  "Bosch",
-  "V/Line",
-  "VicRoads",
+// who-we-keep-safe gallery captions / file names, plus Patrick (read-testimonials).
+// Official logos in public/logos (scripts/logos.mjs). Names with no public
+// logo found are listed as text — see README.
+export const keepSafe: { name: string; logo?: string }[] = [
+  { name: "MCG", logo: "mcg.png" },
+  { name: "Australian Open", logo: "australian-open.svg" },
+  { name: "Rod Laver Arena", logo: "rod-laver-arena.svg" },
+  { name: "Marvel Stadium", logo: "marvel-stadium.svg" },
+  { name: "Patrick Stevedoring", logo: "patrick.png" },
+  { name: "Chadstone Shopping Centre", logo: "chadstone.svg" },
+  { name: "Westfield Shopping Centre", logo: "westfield.png" },
+  { name: "Royal Melbourne Hospital", logo: "rmh.svg" },
+  { name: "St Vincents Hospital", logo: "svhm.png" },
+  { name: "Austin Hospital Melbourne", logo: "austin.png" },
+  { name: "Northern Hospital Melbourne", logo: "northern-health.svg" },
+  { name: "Forensicare", logo: "forensicare.png" },
+  { name: "Commonwealth Games 2006", logo: "commonwealth-games-2006.svg" },
+  { name: "Falls Music Festival", logo: "falls.png" },
+  { name: "Vicroads", logo: "vicroads.png" },
+  { name: "Bayer", logo: "bayer.svg" },
+  { name: "CISCO", logo: "cisco.svg" },
+  { name: "Exxon Mobil", logo: "exxonmobil.svg" },
+  { name: "Bosch", logo: "bosch.svg" },
+  { name: "UFC", logo: "ufc.svg" },
+  { name: "Wrestlemania", logo: "wrestlemania.svg" },
+  { name: "Qudos Stadium" },
+  { name: "Station Pier" },
+  { name: "Moonee Valley Racecourse" },
+  { name: "Melbourne Health" },
+  { name: "Football Grand Final Parade" },
+  { name: "Spencer Street Station" },
 ];
 
-export const capabilities = [
+// services (tab panels) + drug-searches. Titles and text are theirs.
+export const services = [
   {
-    code: "EDD",
-    title: "Explosive detection",
-    body: "Passive-alert explosive detection dogs imprinted on commercial, military and homemade explosive families, for venue sweeps, VIP visits and threat response.",
-    img: "mcg",
-    alt: "Detector dog handler searching the stands at the MCG",
-  },
-  {
-    code: "NDD",
-    title: "Narcotic detection",
-    body: "Illicit drugs, controlled medications and concealment materials, screened across lockers, vehicles, bags and shared areas with minimal disruption.",
-    img: "garage",
-    alt: "Detection dog screening boxes and bags in a garage",
-  },
-  {
-    code: "EVT",
-    title: "Major events & venues",
-    body: "Stadiums, arenas, festivals and international tours. Pre-event sweeps and live screening that keep crowds moving and schedules intact.",
+    title: "Canine Detection Unit",
+    body: "High-profile event organisers, manufacturing facilities, transport operators, service providers, airlines, and educational institutions regularly seek our expertise in detection services.",
     img: "stadium",
-    alt: "Two handlers and detection dogs walking onto a stadium",
+    alt: "Two handlers with detection dogs walking into a stadium",
   },
   {
-    code: "TRN",
-    title: "Ports, aviation & cargo",
-    body: "Pallet and unit-load screening without stopping freight flow, plus vehicle and aircraft searches at wharves, terminals and hangars.",
-    img: "aviation",
-    alt: "Handler and dog searching a private jet in a hangar",
+    title: "Emergency Response Teams",
+    body: "Our teams are highly adaptable, able to respond immediately to changing circumstances, and capable of designing customised solutions to meet the unique challenges your organisation may face.",
+    img: "mcg",
+    alt: "Handler with a detection dog in empty stadium seating",
   },
   {
-    code: "INS",
-    title: "Institutions & industry",
-    body: "Hospitals and mental health wards, schools, universities, mines, oil and gas sites and workplaces, integrated with existing drug and safety policy.",
+    title: "Hospitals – Mental Health",
+    body: "Many hospitals are also taking steps to create safer environments for staff and patients by engaging the services of Detector Dogs Australia.",
     img: "wharf",
-    alt: "K9 handler in hi-vis at a vehicle checkpoint",
+    alt: "K9 handler in a hi-vis vest with a detection dog",
   },
   {
-    code: "PVT",
-    title: "Private & confidential",
-    body: "Discreet home searches of bedrooms, vehicles, garages and living areas. Clarity without confrontation — most homes screened in under an hour.",
+    title: "Programs For Schools",
+    body: "Detector Dogs Australia is proud to provide services to both public and private school campuses across Australia.",
+    img: "schools",
+    alt: "Students with backpacks walking into a school",
+  },
+  {
+    title: "Private Home Searches",
+    body: "Discreet home drug searches using trained detection dogs. Peace of mind for families across Australia. Confidential and respectful service.",
     img: "bedroom",
-    alt: "Golden retriever detection dog checking a backpack in a bedroom",
+    alt: "Detection dog checking a backpack in a bedroom",
+  },
+  {
+    title: "Mining / Transport",
+    body: "Our canine teams are trained to operate in high-risk and industrial environments, providing fast, accurate detection that integrates smoothly into your safety processes.",
+    img: "aviation",
+    alt: "Handler and detection dog searching beside a private jet",
   },
 ];
 
-// "What you should expect from a professional provider" — services page.
+// services — "What You Should Expect From a Professional Provider".
 export const standards = [
-  ["Single-purpose training", "Each dog is trained in one discipline — explosives or narcotics, never both — so every alert means exactly one thing."],
-  ["Comprehensive imprinting", "Every major family of commercial and military explosive, plus homemade explosives, reflecting current global threat patterns."],
-  ["Licensed explosive access", "Live training materials procured, stored and handled under licence for realistic conditioning and testing."],
-  ["Daily sustainment training", "Structured maintenance training through every dog’s working career to hold peak detection accuracy."],
-  ["Independent validation", "External testing and certification to confirm operational reliability and standards compliance."],
-  ["Auditable records", "Secure training, transfer and certification records, supported by video verification, for a complete audit trail."],
+  ["Single-purpose training", "Dogs should be trained for one detection discipline only (e.g., explosives or narcotics). Cross-training can dilute focus and reduce clarity of alerts, increasing the risk of handler misinterpretation."],
+  ["Comprehensive explosive imprinting", "Dogs should be trained on all major families of commercial and military explosives, as well as homemade explosive materials (HMEs). Recent global threat patterns demonstrate increasing use of HMEs due to accessibility and concealment advantages."],
+  ["Licensed explosive access", "A professional provider must be appropriately licensed to procure, store, and handle live training explosives for realistic conditioning and testing."],
+  ["Daily sustainment training", "Structured, ongoing maintenance training is essential to preserve peak detection accuracy across the dog’s working career."],
+  ["Independent validation", "Providers should undergo external testing and certification to confirm operational reliability and standards compliance."],
+  ["Robust record systems", "Professional providers maintain secure documentation systems for audit trails, transfer certifications, and training records, often supported by video verification."],
 ];
 
+// services — exactly as listed, same order, same spelling.
 export const odours = {
   explosives: [
-    "Ammonia-Gel", "Ammonium Nitrate", "Hexogen (RDX)", "Octogen (HMX)", "PETN / Nitropenta", "TNT / Trotyl",
-    "Tetryl", "TATP", "HMTD", "Nitroglycerine", "Nitrocellulose", "All dynamites",
-    "Water gels", "Smokeless powder", "Black powder", "Gunpowder", "Chlorates", "Sodium chlorate",
-    "Potassium chlorate", "Potassium nitrate", "Smell the shot",
+    "Ammonia- Gel", "Ammonia-Nitrate", "Hexogen (RDX)", "Potassium Chloride", "Potassium Nitrate", "Sodium Chlorate",
+    "Nitro-Glycerine", "Nitro-Cellulose", "TNT", "All Dynamites", "Tetryl", "Water Gels",
+    "Octogen (HMX)", "Smokeless Powder", "Black Powder", "Gun Powder", "Chlorates", "PETN = Nitropenta",
+    "TATP", "HMTD", "Smell The Shot", "Trotyl",
   ],
   narcotics: [
-    "Cocaine", "Crack cocaine", "Heroin", "Morphine", "Opium", "Speedball",
-    "Amphetamines", "Methamphetamine", "Ecstasy (MDMA)", "GHB", "LSD", "Psilocybin",
-    "Cannabis — indica", "Cannabis — sativa", "Cannabis — ruderalis", "Hashish",
+    "Cocaine ( Koka, Pflanza, Peru)", "Morphine", "Crack (Cocaine + Sodium Hydrogen Carbonate Backpulver)", "Opium",
+    "Heroin", "LSD", "Amphetamines", "Psilocybin Mushrooms",
+    "Ecstasy (Methamphetamine)", "Liquid Ecstasy GHB", "Thai-Pillen (Methamphetamine)", "Hemp Cannabis Indica, Sativa, Ruderalis",
+    "Marijuana", "Cannabis", "Hash", "Speedball",
   ],
 };
 
+// about-us — "How We Work With Clients".
 export const process = [
-  ["Consultation", "Detailed needs analysis with your security, operations or leadership team."],
-  ["Planning", "Operational plan and risk assessment built around the site, event or program."],
-  ["Deployment", "Specialised, single-discipline detection teams on site at short notice."],
-  ["Benchmarking", "Performance measured continuously against industry benchmarks."],
-  ["Reporting", "Clear reporting and improvement cycles after every deployment."],
+  "Detailed consultation and needs analysis",
+  "Operational planning and risk assessment",
+  "Deployment of specialised detection teams",
+  "Continuous performance benchmarking",
+  "Reporting and improvement cycles",
 ];
 
-// read-testimonials, shortened. Names and titles are as published.
+// read-testimonials — exact sentences, names and titles as published.
 export const testimonials = [
   {
+    heading: "Patrick Stevedoring – Queen Mary II",
     quote:
-      "They worked tirelessly on the day, checking each and every vehicle entering the facility. The Office of Transport Security were on site on two separate instances and commented on both occasions how pleased they were.",
+      "They worked tirelessly on the day, checking each and every vehicle entering the facility. The Office of Transport Security were on site on two separate instances and commented on both occasions how pleased they were with our adoption of this additional security measure and how well it was implemented on the day.",
     name: "Paul Cudmore",
-    role: "Business Unit Manager, Patrick Stevedoring — Melbourne",
-    context: "Queen Mary II visit, Webb Dock East",
+    role: "Business Unit Manager, Patrick Stevedoring – Melbourne",
   },
   {
+    heading: "Westfield Shopping Centre",
     quote:
-      "The K-9 Detection Team you supplied significantly enhanced security arrangements pertaining to both physical assets and personnel during an exceptionally busy and potentially disruptive period.",
+      "The ‘K-9 Detection Team’ you supplied significantly enhanced security arrangements pertaining to both physical assets and personnel at Westfield CBD during an exceptionally busy and potentially disruptive period.",
     name: "Trent Morrissey",
-    role: "Security Manager, Westfield Sydney CBD Properties",
-    context: "World Youth Day 2008",
+    role: "Security Manager, Westfield CBD Properties",
   },
   {
-    quote:
-      "The whole service was conducted flawlessly and the team worked well with the SNP staff and management on site.",
+    heading: "SNP Security",
+    quote: "The whole service was conducted flawlessly and the team worked well with the SNP staff and management on site.",
     name: "Ken Jenkins",
-    role: "Account Manager — Protective Services, SNP Security",
-    context: "Royal visit, Queen Victoria Building, Sydney",
+    role: "Account Manager – Protective Services, SNP Security",
   },
 ];

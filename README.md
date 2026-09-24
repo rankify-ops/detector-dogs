@@ -18,7 +18,7 @@ logo gradient) is a signal colour only: index numerals, status dots, the hero ta
 buttons are ink. Only the footer is dark.
 
 Sections: utility strip · frosted header · hero (port photo with scan line + target lock) ·
-credentials strip · "Deployed at" marquee · 6 capabilities · standards (U.S. standard as minimum,
+credentials strip · "Who We Keep Safe" logo wall · 6 services · standards (U.S. standard as minimum,
 NPCA PD 038, six professional standards) · why canine · odour library (tabbed) · coverage dot map ·
 engagement process · testimonials + media · scope ("not a security guarding company") · enquiry form.
 Home page only — every nav link is an in-page anchor.
@@ -26,19 +26,28 @@ Home page only — every nav link is an in-page anchor.
 ## Content
 
 Every claim is from their own site (home, about-us, services, our-dogs, drug-searches,
-read-testimonials, who-we-keep-safe), rewritten for length — see `src/content/site.ts`. Nothing is
-invented. Raw scrape is in `_source/` (git-ignored).
+read-testimonials, who-we-keep-safe), in their exact wording — see `src/content/site.ts`. Nothing
+is reworded, corrected or invented. Raw scrape is in `_source/` (git-ignored).
+
+## Logos
+
+The "Who We Keep Safe" wall uses official logos, unaltered: Wikipedia/Wikimedia file pages (MCG,
+Australian Open, Rod Laver Arena, Marvel Stadium, Chadstone, Commonwealth Games 2006, VicRoads, Bayer,
+Cisco, ExxonMobil, Bosch, UFC, WrestleMania) and each organisation's own site (Patrick, Westfield, RMH,
+St Vincent's, Austin Health, Northern Health, Forensicare, Falls). No usable public logo was found for
+Qudos Stadium (now renamed), Station Pier, Moonee Valley (only a white version published), Melbourne
+Health, Football Grand Final Parade and Spencer Street Station — those show as text.
 
 ## Needs the client
 
-- **Vector logo.** The header uses a typographic stand-in (`src/components/Logo.tsx`); theirs is a raster PNG.
+- **Vector logo.** The header uses their DDA PNG; a vector version would be sharper.
 - **Better photography.** Their images are small (most ≤ 1000px). The hero photo is 984px wide and is
   only shown at that size. Anything high-res of teams at work would lift the page most.
-- **Confirm the "Deployed at" list** — taken from their "Who we keep safe" gallery. Celebrity/tour
+- **Confirm the "Who We Keep Safe" list** — taken from their gallery captions. Celebrity/tour
   photos there were deliberately not used (not theirs to license).
 - **Phone number:** the site uses 1300 360 171 everywhere except the About page, which says 1300 361 171.
-- **Odour list corrections:** "Potassium Chloride" → potassium chlorate, "Ammonia-Nitrate" → ammonium
-  nitrate. Worth a quick OK.
+- **Copy is theirs, verbatim.** Odour names and spellings are exactly as published (incl. "Potassium
+  Chloride") — do not edit without the client.
 - **Web3Forms key** → `NEXT_PUBLIC_WEB3FORMS_KEY` in `deploy.yml`. Until then the form opens a
   pre-filled email to info@.
 - **Domain cutover:** delete the `NEXT_PUBLIC_BASE_PATH` line in `deploy.yml` AND add `public/CNAME`,

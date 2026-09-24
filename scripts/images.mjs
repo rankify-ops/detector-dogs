@@ -19,6 +19,7 @@ const PHOTOS = [
   ["Detector-Dogs-Australia-Port-Of-Melbourne-Neville-Williams.jpg", "port"],
   ["Detector-Dogs-MCG-search.jpg", "mcg"],
   ["stadium-detection.jpg", "stadium"],
+  ["schools.jpg", "schools"],
   ["garage_detection.jpg", "garage"],
   ["bedroom_detection.jpg", "bedroom"],
   ["plane-detection-search.jpg", "aviation"],

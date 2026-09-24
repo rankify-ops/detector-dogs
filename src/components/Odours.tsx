@@ -5,13 +5,12 @@ import { odours } from "@/content/site";
 import { Reveal, SectionHead } from "./ui";
 
 const TABS = [
-  { key: "explosives", label: "Explosives", prefix: "EX" },
-  { key: "narcotics", label: "Narcotics", prefix: "NC" },
+  { key: "explosives", label: "Explosives" },
+  { key: "narcotics", label: "Narcotics" },
 ] as const;
 
 export function Odours() {
   const [tab, setTab] = useState<(typeof TABS)[number]["key"]>("explosives");
-  const active = TABS.find((t) => t.key === tab)!;
   const list = odours[tab];
 
   return (
@@ -19,16 +18,17 @@ export function Odours() {
       <div className="wrap py-24 lg:py-36">
         <SectionHead
           index="04"
-          kicker="Odour library"
+          kicker="Odours Our Dogs Detect"
           title={
             <>
-              Pure odour. <span className="dim">Never pseudo.</span>
+              What Odours Can A Proficiently Trained Dog Detect? <span className="dim">Pure Odour is what they can detect, Not Pseudo</span>
             </>
           }
           aside={
             <p>
-              Training odours are sourced from multiple international suppliers in the USA, Europe and Russia, and
-              complemented with real materials — broad coverage of every odour readily available in our communities.
+              Detector Dogs Australia utilises pure odour and not Pseudo odour from multiple global suppliers located in
+              USA, Russia and Europe to ensure excellent coverage of all explosive odours readily available in our
+              communities.
             </p>
           }
         />
@@ -49,13 +49,10 @@ export function Odours() {
                   }`}
                 >
                   {t.label}
-                  <span className={`ml-2 ${tab === t.key ? "text-white/50" : "text-ink-3"}`}>{odours[t.key].length}</span>
+                  
                 </button>
               ))}
             </div>
-            <p className="mono px-2 text-[10.5px] text-ink-3">
-              Single-purpose dogs · {tab === "explosives" ? "passive alert" : "active alert"}
-            </p>
           </div>
 
           <div className="overflow-hidden">
@@ -66,9 +63,6 @@ export function Odours() {
                 className="flex items-center gap-2 border-b border-r border-rule px-3 py-3.5 text-[13.5px] text-ink sm:gap-4 sm:px-5 sm:py-4 sm:text-[15px]"
                 style={{ animation: `fadeIn .5s var(--ease) ${i * 22}ms both` }}
               >
-                <span className="mono hidden w-11 shrink-0 text-[10.5px] text-ink-3 sm:inline">
-                  {active.prefix}-{String(i + 1).padStart(2, "0")}
-                </span>
                 {o}
               </li>
             ))}
