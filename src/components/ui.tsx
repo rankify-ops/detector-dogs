@@ -68,11 +68,14 @@ export function Photo({
   );
 }
 
+/** Up-right arrow in a square, sits at the end of a .btn. Colours come from .btn-primary / .btn-ghost. */
 export function Arrow({ className = "" }: { className?: string }) {
   return (
-    <svg width="14" height="10" viewBox="0 0 14 10" fill="none" className={`arrow ${className}`} aria-hidden>
-      <path d="M0 5h12.5M9 1l4 4-4 4" stroke="currentColor" strokeWidth="1.2" />
-    </svg>
+    <span className={`arrow-box ${className}`} aria-hidden>
+      <svg width="11" height="11" viewBox="0 0 11 11" fill="none" className="arrow">
+        <path d="M1.5 9.5l8-8M3 1.5h6.5V8" stroke="currentColor" strokeWidth="1.6" strokeLinecap="square" />
+      </svg>
+    </span>
   );
 }
 

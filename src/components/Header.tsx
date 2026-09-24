@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { nav, site } from "@/content/site";
 import { Logo } from "./Logo";
+import { Arrow } from "./ui";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -69,8 +70,8 @@ export function Header() {
             <a href={site.phoneHref} className="mono hidden text-ink md:block xl:mr-3">
               {site.phone}
             </a>
-            <a href="#contact" className="btn btn-primary hidden h-11 sm:inline-flex">
-              Enquire Now
+            <a href="#contact" className="btn btn-primary h-11 gap-2.5 pl-3 text-[10.5px] tracking-[0.1em] sm:gap-4 sm:pl-[22px] sm:text-[12px] sm:tracking-[0.14em]">
+              Enquire Now <Arrow />
             </a>
             <button
               type="button"
@@ -108,10 +109,10 @@ export function Header() {
             ))}
             <div className="mt-auto grid gap-3">
               <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary w-full">
-                Enquire Now
+                Enquire Now <Arrow />
               </a>
               <a href={site.phoneHref} className="btn btn-ghost w-full">
-                Call Now {site.phone}
+                Call Now {site.phone} <Arrow />
               </a>
             </div>
           </nav>

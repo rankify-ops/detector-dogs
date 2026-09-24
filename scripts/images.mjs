@@ -26,6 +26,9 @@ const PHOTOS = [
   ["wharf_detection-bw-oeha466pehdxt21bkb6ecfjyxw2wmzd8vcs2nj3jq8.jpg", "wharf"],
   ["Detector-Dogs-Australia-Malinois-bw.jpg", "malinois"],
   ["DDA-Melbourne-Ports-Kris-Kotsopoulos-oea505wj60o8pnybltbbeuigsr9sg73euqnhi5w4mq.jpg", "handler"],
+  ["yt-sbs.jpg", "yt-sbs"],
+  ["yt-ch9.jpg", "yt-ch9"],
+  ["yt-hospital.jpg", "yt-hospital"],
   ["SBS-Interview-_-Kris-Kotsopolous.jpg", "sbs", { left: 0, top: 110, width: 1700, height: 720 }],
 ];
 

@@ -33,6 +33,7 @@ export const nav = [
   ["Odours", "#odours"],
   ["Locations", "#coverage"],
   ["Testimonials", "#testimonials"],
+  ["FAQ", "#faq"],
 ] as const;
 
 // about-us + services.
@@ -169,4 +170,81 @@ export const testimonials = [
     name: "Ken Jenkins",
     role: "Account Manager – Protective Services, SNP Security",
   },
+];
+
+// YouTube videos embedded on their home + services pages, with their captions.
+export const videos = [
+  { id: "n27CfFSedGA", title: "SBS World News Interview", poster: "sbs" },
+  { id: "tyOrKoHrgtw", title: "Ch 9 News Interview with Kris Kotsopolous – Explosives Detection", poster: "yt-ch9" },
+  {
+    id: "qXno2lGWiWY",
+    title: "Interview with North West Area Mental Health Services – Drug Detector Dogs In Hospitals",
+    poster: "yt-hospital",
+  },
+];
+
+/*
+ * FAQ — the home page toggles ("Are You Ready To Take Control ?") and the
+ * Private Home Searches questions on drug-searches, verbatim. The two odour
+ * toggles are left out because the full odour lists already have their own
+ * section. In answers: "## " = sub-heading, "- " = list item, else paragraph.
+ * callNow = the toggle ends with their "Call Now 1300 360 171" line.
+ */
+export const faqs: { q: string; a: string[]; callNow?: boolean }[] = [
+  {
+    q: "How Fast Can You Deploy ?",
+    a: [
+      "## Rapid-Response Detection Teams Nationwide",
+      "Our expert detection teams are ready to deploy at short notice anywhere across Australia, providing fast, reliable, and discreet canine detection services.",
+    ],
+    callNow: true,
+  },
+  {
+    q: "Why Choose DDA?",
+    a: [
+      "## Experience You Can Trust",
+      "With a lifetime of experience, Detector Dogs Australia welcomes the opportunity to demonstrate our team’s skills and operational commitment.",
+      "We are proud to operate the longest-running canine program in Australia, delivering specialist detection, training, and operational services with unparalleled reliability.",
+      "## Our Credentials",
+      "- 80+ years of combined team experience in working service dogs, breeding, and training.",
+      "- Leaders in animal training, providing expertise in behavioural science and operational deployment.",
+      "- Director & Author: Our director is a recognised specialist and published author on searching and tracking tactics.",
+      "- Proven track record supporting government, corporate, and private clients nationwide.",
+      "For detailed precision training methods and programs, visit: www.vonforellprecisiontraining.com",
+    ],
+  },
+  {
+    q: "What We Can't Do",
+    a: [
+      "## What We Do — and What We Don’t Do",
+      "Detector Dogs Australia is committed to delivering professional, reliable, and specialised canine detection services across Australia. While we are here to help with explosives, narcotics, and specialist scent detection, there are a few areas outside our scope:",
+      "## We Do Not Provide:",
+      "- Searches for lost or missing pets",
+      "- Searches for currency, cash, or financial instruments",
+      "We focus exclusively on precision canine detection services, ensuring every deployment meets our strict standards for accuracy, safety, and discretion.",
+      "If your needs fall within our specialist capabilities, our rapid-response detection teams are available nationwide.",
+      "Call 1300 360 171 for professional, confidential assistance.",
+    ],
+  },
+  {
+    q: "What Locations Do We Cover?",
+    a: [
+      "## A Professional Scent Detection Service Without Borders",
+      "Detector Dogs Australia is a professional, full-capability scent detection service that operates nationwide. We are committed to meeting every client requirement with precision, reliability, and discretion — no matter where in Australia your operational needs arise.",
+      "Our teams are trained and equipped to deliver rapid, effective, and compliant detection services, ensuring that all obligations are met efficiently and professionally.",
+    ],
+    callNow: true,
+  },
+  {
+    q: "What Is The Cost For A Canine Scent Detection Service",
+    a: [
+      "## Call Us Today for Immediate Assistance",
+      "A quick phone call is the fastest way to discuss your requirements and determine the best solution. Our expert detection teams can tailor a response to meet your needs immediately, ensuring fast, reliable, and professional service anywhere in Australia.",
+    ],
+    callNow: true,
+  },
+  { q: "Security Services", a: ["Detector Dogs Australia is not a security provider."] },
+  { q: "Will the search damage my home?", a: ["No. Our dogs detect odour only. Nothing is disturbed."] },
+  { q: "Is the process private?", a: ["Yes. It is completely confidential."] },
+  { q: "How long does a home search take?", a: ["Most homes can be screened in under an hour."] },
 ];

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fragment_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { site } from "@/content/site";
+import { faqs, site } from "@/content/site";
 import { asset } from "@/lib/basePath";
 import "./globals.css";
 
@@ -68,6 +68,16 @@ const jsonLd = {
   sameAs: [site.facebook, site.linkedin, site.youtube],
 };
 
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a.map((line) => line.replace(/^(## |- )/, "")).join(" ") },
+  })),
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en-AU" className={`${inter.variable} ${mono.variable}`} suppressHydrationWarning>
@@ -76,6 +86,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
         <Header />
         <main>{children}</main>
         <Footer />

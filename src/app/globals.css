@@ -133,8 +133,22 @@
   .btn-primary:hover { background: var(--navy-2); }
   .btn-ghost { color: var(--ink); background: transparent; border-color: var(--rule-2); }
   .btn-ghost:hover { border-color: var(--ink); }
-  .btn .arrow { transition: transform 0.3s var(--ease); }
-  .btn:hover .arrow { transform: translateX(4px); }
+  /* Arrow box: a square at the right end of the button, arrow nudges up-right on hover. */
+  .btn:has(.arrow-box) { padding-right: 8px; gap: 16px; }
+  .arrow-box {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+  .btn-primary .arrow-box { background: var(--paper); color: var(--ink); }
+  .btn-ghost .arrow-box { background: var(--ink); color: var(--paper); }
+  .btn .arrow { transition: transform 0.35s var(--ease); }
+  .btn:hover .arrow { transform: translate(2px, -2px); }
+  .h-11.btn .arrow-box { width: 28px; height: 28px; }
 
   /* Frosted header: transparent at the top, glass once scrolled. */
   .glass {
@@ -253,57 +267,3 @@
   .logo-marquee { animation-duration: 70s; }
 }
 
-/*
- * Coverage map. Every route uses pathLength=1, so dash values are fractions of
- * the route. The track draws itself out of Melbourne once; the signal is a
- * short orange streak that leaves Melbourne, lands (TRAVEL = 1.4s, see
- * Coverage.tsx) and repeats every 6s, staggered per city.
- */
-@layer components {
-  .route-track {
-    fill: none;
-    stroke: #0b1a2c;
-    stroke-opacity: 0.55;
-    stroke-width: 1.6;
-    stroke-dasharray: 0.006 0.012;
-    opacity: 0;
-    animation: route-draw 1.2s var(--ease) forwards;
-  }
-  @keyframes route-draw { to { opacity: 1; } }
-
-  /* Nothing on the map moves until it has scrolled into view. */
-  .js .reveal:not(.in) :is(.route-track, .route-signal, .city-ping) { animation-play-state: paused; }
-
-  .route-signal {
-    fill: none;
-    stroke: #e8650f;
-    stroke-width: 3;
-    stroke-linecap: round;
-    stroke-dasharray: 0.12 1.2;
-    stroke-dashoffset: 0.12;
-    opacity: 0;
-    animation: route-signal 6s cubic-bezier(0.55, 0, 0.3, 1) infinite;
-  }
-  @keyframes route-signal {
-    0% { stroke-dashoffset: 0.12; opacity: 1; }
-    23% { stroke-dashoffset: -1; opacity: 1; }
-    24%, 100% { stroke-dashoffset: -1; opacity: 0; }
-  }
-
-  .city-ping {
-    transform-box: fill-box;
-    transform-origin: center;
-    opacity: 0;
-    animation: city-ping 6s var(--ease) infinite;
-  }
-  @keyframes city-ping {
-    0% { transform: scale(1); opacity: 0.9; }
-    20% { transform: scale(4); opacity: 0; }
-    100% { transform: scale(4); opacity: 0; }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .route-track { animation: none; opacity: 1; }
-    .route-signal, .city-ping { animation: none; display: none; }
-  }
-}

@@ -60,7 +60,7 @@ export function Contact() {
       <div className="wrap grid gap-16 py-24 lg:grid-cols-12 lg:py-36">
         <div className="lg:col-span-5">
           <p className="mono flex justify-between text-ink-3 lg:block">
-            <span className="text-signal-ink">08</span>
+            <span className="text-signal-ink">09</span>
             <span className="lg:ml-6">Contact Us</span>
           </p>
           <Reveal>

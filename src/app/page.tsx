@@ -3,6 +3,7 @@ import { KeepSafe, Services, Standards, WhyCanine, Process, Testimonials, Scope 
 import { Odours } from "@/components/Odours";
 import { Coverage } from "@/components/Coverage";
 import { Contact } from "@/components/Contact";
+import { Faq } from "@/components/Faq";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Process />
       <Testimonials />
       <Scope />
+      <Faq />
       <Contact />
     </>
   );

@@ -5,6 +5,7 @@
 import { keepSafe, services, process, standards, testimonials } from "@/content/site";
 import { asset } from "@/lib/basePath";
 import { Brackets, Photo, Reveal, SectionHead } from "./ui";
+import { Videos } from "./Videos";
 
 /* ── Who We Keep Safe (who-we-keep-safe) — logo carousel ───────────── */
 export function KeepSafe() {
@@ -199,15 +200,7 @@ export function Testimonials() {
         ))}
       </div>
 
-      <Reveal className="mt-6 grid overflow-hidden border border-rule bg-white md:grid-cols-2">
-        <div className="relative aspect-[16/9] md:aspect-auto md:min-h-[300px]">
-          <Photo slug="sbs" alt="SBS World News Interview" sizes="(min-width:768px) 50vw, 100vw" className="absolute inset-0 h-full w-full object-cover" />
-        </div>
-        <div className="flex flex-col justify-center gap-6 p-8 lg:p-12">
-          <p className="text-[26px] leading-tight tracking-tight text-ink lg:text-[30px]">SBS World News Interview</p>
-          <p className="text-[18px] leading-snug text-ink-2">Ch 9 News Interview with Kris Kotsopolous – Explosives Detection</p>
-        </div>
-      </Reveal>
+      <Videos />
     </section>
   );
 }

@@ -24,7 +24,7 @@ export function Hero() {
                 Enquire Now <Arrow />
               </a>
               <a href={site.phoneHref} className="btn btn-ghost w-full sm:w-auto">
-                Call Now {site.phone}
+                Call Now {site.phone} <Arrow />
               </a>
             </div>
             <p className="mono mt-6 text-[10.5px] text-ink-3">All enquiries handled confidentially</p>

@@ -8,7 +8,7 @@ export function Logo({ light = false }: { light?: boolean }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={asset("/img/dda-logo.png")} alt="DDA" className="h-6 w-auto" />
       </span>
-      <span className={`mono leading-[1.35] ${light ? "text-white" : "text-ink"}`} style={{ fontSize: 10.5 }}>
+      <span className={`mono whitespace-nowrap leading-[1.35] ${light ? "text-white" : "hidden min-[420px]:inline text-ink"}`} style={{ fontSize: 10.5 }}>
         Detector Dogs
         <br />
         <span className={light ? "text-white/55" : "text-ink-3"}>Australia</span>
