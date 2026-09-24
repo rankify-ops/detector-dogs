@@ -17,7 +17,9 @@ export function Header() {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    // Lock on <html>, not <body>: html has overflow-x:hidden, so a locked body becomes its
+    // own scroll box and the sticky header jumps back to the top of the page.
+    document.documentElement.style.overflow = open ? "hidden" : "";
     if (!open) return;
     const esc = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
     window.addEventListener("keydown", esc);
@@ -50,7 +52,7 @@ export function Header() {
 
       <header
         className={`sticky top-0 z-50 border-b transition-colors duration-500 ${
-          scrolled || open ? "glass border-rule" : "border-transparent bg-paper"
+          open ? "border-rule bg-paper" : scrolled ? "glass border-rule" : "border-transparent bg-paper"
         }`}
       >
         <div className="wrap flex h-[72px] items-center justify-between gap-6">
@@ -89,35 +91,37 @@ export function Header() {
           </div>
         </div>
 
-        {/* Mobile menu */}
-        <div
-          className={`fixed inset-x-0 bottom-0 top-[73px] bg-paper transition-opacity duration-300 lg:hidden ${
-            open ? "opacity-100" : "pointer-events-none opacity-0"
-          }`}
-        >
-          <nav aria-label="Mobile" className="wrap flex h-full flex-col pb-8 pt-4">
-            {nav.map(([label, href], i) => (
-              <a
-                key={href}
-                href={href}
-                onClick={() => setOpen(false)}
-                className="flex items-baseline gap-4 border-b border-rule py-5 text-[28px] tracking-tight text-ink"
-              >
-                <span className="mono text-signal-ink">0{i + 1}</span>
-                {label}
-              </a>
-            ))}
-            <div className="mt-auto grid gap-3">
-              <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary w-full">
-                Enquire Now <Arrow />
-              </a>
-              <a href={site.phoneHref} className="btn btn-ghost w-full">
-                Call Now {site.phone} <Arrow />
-              </a>
-            </div>
-          </nav>
-        </div>
       </header>
+
+      {/* Mobile menu — a sibling of <header>, not a child: the header's backdrop-filter
+          would become the containing block for this fixed panel and collapse it. */}
+      <div
+        className={`fixed inset-x-0 bottom-0 top-[73px] z-40 overflow-y-auto bg-paper transition-opacity duration-300 lg:hidden ${
+          open ? "opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <nav aria-label="Mobile" className="wrap flex min-h-full flex-col pb-8 pt-2">
+          {nav.map(([label, href], i) => (
+            <a
+              key={href}
+              href={href}
+              onClick={() => setOpen(false)}
+              className="flex items-baseline gap-4 border-b border-rule py-4 text-[26px] tracking-tight text-ink"
+            >
+              <span className="mono text-signal-ink">0{i + 1}</span>
+              {label}
+            </a>
+          ))}
+          <div className="mt-auto grid gap-3 pt-8">
+            <a href="#contact" onClick={() => setOpen(false)} className="btn btn-primary w-full">
+              Enquire Now <Arrow />
+            </a>
+            <a href={site.phoneHref} className="btn btn-ghost w-full">
+              Call Now {site.phone} <Arrow />
+            </a>
+          </div>
+        </nav>
+      </div>
     </>
   );
 }
