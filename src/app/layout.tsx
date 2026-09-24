@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fragment_Mono } from "next/font/google";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MobileBar } from "@/components/MobileBar";
 import { faqs, site } from "@/content/site";
 import { asset } from "@/lib/basePath";
 import "./globals.css";
@@ -90,6 +91,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <MobileBar />
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import { Arrow, Brackets, Photo, Reveal } from "./ui";
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
-      <div className="grid-bg pointer-events-none absolute inset-0 opacity-70" aria-hidden />
+      <div className="grid-bg pointer-events-none absolute inset-0 hidden opacity-70 lg:block" aria-hidden />
 
       <div className="wrap relative pb-14 pt-10 sm:pt-16 lg:pb-28 lg:pt-16">
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-14">
