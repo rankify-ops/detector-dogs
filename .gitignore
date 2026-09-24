@@ -1,0 +1,29 @@
+*.tsbuildinfo
+.DS_Store
+.logo-drop
+.next
+.preview
+next-env.d.ts
+node_modules
+out
+scrape/*.html
+
+# scrape + session notes
+.firecrawl
+
+# raw capture of the live site
+_source
+
+# raw downloads: only the files scripts/images.mjs uses are tracked
+assets-raw/*
+!assets-raw/Detector-Dogs-Australia-Port-Of-Melbourne-Neville-Williams.jpg
+!assets-raw/Detector-Dogs-MCG-search.jpg
+!assets-raw/stadium-detection.jpg
+!assets-raw/garage_detection.jpg
+!assets-raw/bedroom_detection.jpg
+!assets-raw/plane-detection-search.jpg
+!assets-raw/wharf_detection-bw-oeha466pehdxt21bkb6ecfjyxw2wmzd8vcs2nj3jq8.jpg
+!assets-raw/Detector-Dogs-Australia-Malinois-bw.jpg
+!assets-raw/DDA-Melbourne-Ports-Kris-Kotsopoulos-oea505wj60o8pnybltbbeuigsr9sg73euqnhi5w4mq.jpg
+!assets-raw/SBS-Interview-_-Kris-Kotsopolous.jpg
+!assets-raw/cropped-DDA-1.png
