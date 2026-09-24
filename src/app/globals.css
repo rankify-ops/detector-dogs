@@ -247,3 +247,8 @@
   .field::placeholder { color: var(--ink-3); }
   select.field { appearance: none; cursor: pointer; }
 }
+
+/* Who We Keep Safe carousel: slower than the text marquee, one logo ≈ every 2.5s. */
+@layer components {
+  .logo-marquee { animation-duration: 70s; }
+}

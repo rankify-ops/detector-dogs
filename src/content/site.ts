@@ -44,9 +44,8 @@ export const stats = [
 ];
 
 // who-we-keep-safe gallery captions / file names, plus Patrick (read-testimonials).
-// Official logos in public/logos (scripts/logos.mjs). Names with no public
-// logo found are listed as text — see README.
-export const keepSafe: { name: string; logo?: string }[] = [
+// Official logos in public/logos (scripts/logos.mjs). NFL added at Tom's request.
+export const keepSafe: { name: string; logo: string }[] = [
   { name: "MCG", logo: "mcg.png" },
   { name: "Australian Open", logo: "australian-open.svg" },
   { name: "Rod Laver Arena", logo: "rod-laver-arena.svg" },
@@ -68,12 +67,9 @@ export const keepSafe: { name: string; logo?: string }[] = [
   { name: "Bosch", logo: "bosch.svg" },
   { name: "UFC", logo: "ufc.svg" },
   { name: "Wrestlemania", logo: "wrestlemania.svg" },
-  { name: "Qudos Stadium" },
-  { name: "Station Pier" },
-  { name: "Moonee Valley Racecourse" },
-  { name: "Melbourne Health" },
-  { name: "Football Grand Final Parade" },
-  { name: "Spencer Street Station" },
+  { name: "Moonee Valley Racecourse", logo: "moonee-valley.png" },
+  { name: "Football Grand Final Parade", logo: "afl.png" },
+  { name: "NFL", logo: "nfl.svg" },
 ];
 
 // services (tab panels) + drug-searches. Titles and text are theirs.

@@ -6,30 +6,31 @@ import { keepSafe, services, process, standards, testimonials } from "@/content/
 import { asset } from "@/lib/basePath";
 import { Brackets, Photo, Reveal, SectionHead } from "./ui";
 
-/* ── Who We Keep Safe (who-we-keep-safe) ─────────────────────────────── */
+/* ── Who We Keep Safe (who-we-keep-safe) — logo carousel ───────────── */
 export function KeepSafe() {
+  // Two copies back to back; the track slides exactly one copy (-50%) and loops.
+  const track = [...keepSafe, ...keepSafe];
   return (
     <section aria-labelledby="keep-safe" className="border-y border-rule bg-white">
-      <div className="wrap py-16 lg:py-20">
-        <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
-          <h2 id="keep-safe" className="mono text-ink">Who We Keep Safe</h2>
-          <p className="mono text-[10.5px] text-ink-3">Thank You For Choosing Detector Dogs Australia</p>
-        </div>
-        <ul className="mt-8 grid grid-cols-2 border-l border-t border-rule sm:grid-cols-3 lg:grid-cols-6">
-          {keepSafe.map((k) => (
-            <li key={k.name} className="flex h-[112px] items-center justify-center border-b border-r border-rule px-5 sm:h-[128px]">
-              {k.logo ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={asset(`/logos/${k.logo}`)}
-                  alt={k.name}
-                  title={k.name}
-                  loading="lazy"
-                  className="max-h-[52px] w-auto max-w-[128px] object-contain"
-                />
-              ) : (
-                <span className="text-center text-[14px] leading-snug text-ink">{k.name}</span>
-              )}
+      <div className="wrap flex flex-col justify-between gap-3 pt-12 sm:flex-row sm:items-end">
+        <h2 id="keep-safe" className="mono text-ink">Who We Keep Safe</h2>
+        <p className="mono text-[10.5px] text-ink-3">Thank You For Choosing Detector Dogs Australia</p>
+      </div>
+      <div className="mt-8 overflow-hidden border-t border-rule [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]">
+        <ul className="marquee logo-marquee">
+          {track.map((k, i) => (
+            <li
+              key={i}
+              aria-hidden={i >= keepSafe.length || undefined}
+              className="flex h-[120px] w-[180px] shrink-0 items-center justify-center border-r border-rule px-6 sm:h-[140px] sm:w-[220px]"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={asset(`/logos/${k.logo}`)}
+                alt={i < keepSafe.length ? k.name : ""}
+                title={k.name}
+                className="max-h-[56px] w-auto max-w-[140px] object-contain"
+              />
             </li>
           ))}
         </ul>

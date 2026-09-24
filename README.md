@@ -34,9 +34,9 @@ is reworded, corrected or invented. Raw scrape is in `_source/` (git-ignored).
 The "Who We Keep Safe" wall uses official logos, unaltered: Wikipedia/Wikimedia file pages (MCG,
 Australian Open, Rod Laver Arena, Marvel Stadium, Chadstone, Commonwealth Games 2006, VicRoads, Bayer,
 Cisco, ExxonMobil, Bosch, UFC, WrestleMania) and each organisation's own site (Patrick, Westfield, RMH,
-St Vincent's, Austin Health, Northern Health, Forensicare, Falls). No usable public logo was found for
-Qudos Stadium (now renamed), Station Pier, Moonee Valley (only a white version published), Melbourne
-Health, Football Grand Final Parade and Spencer Street Station — those show as text.
+St Vincent's, Austin Health, Northern Health, Forensicare, Falls). Moonee Valley is their MVRC banner logo; Football Grand Final Parade uses the AFL logo; NFL was added at
+Tom's request. Qudos Stadium, Station Pier, Melbourne Health and Spencer Street Station were dropped (no
+usable logo). Shown as an auto-scrolling carousel under the stats strip.
 
 ## Needs the client
 
